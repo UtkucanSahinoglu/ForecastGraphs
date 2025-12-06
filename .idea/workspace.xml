@@ -4,41 +4,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="044e8f0c-7038-465c-8306-de87f5591fc4" name="Changes" comment="project file add">
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/Data" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2004_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2005_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2006_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2007_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2008_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2009_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2010_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2011_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2012_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2013_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2014_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2015_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2016_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2017_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2018_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2019_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2020_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2021_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2022_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2023_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2024_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_2025_Shots.csv.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/NBA_Shots_Tutorial.Rmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/NBA_Shots_04_25/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/loader.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/plot_utils.py" afterDir="false" />
+    <list default="true" id="044e8f0c-7038-465c-8306-de87f5591fc4" name="Changes" comment="Moving Average add">
+      <change afterPath="$PROJECT_DIR$/src/associative_method.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/compare_errors.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/forecast_holt.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/forecast_ses.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/forecast_wma.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/graph_ma.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/impact_of_q.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/init.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/least_squares.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/metrics.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/seasonal_index.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/trend_projection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forecast_ma.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/forecast_ma.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plot_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocess.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,6 +64,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/Utku/PycharmProjects/ForecastGraphs/Data"
   }
@@ -129,19 +126,28 @@
       <option name="project" value="LOCAL" />
       <updated>1765051603876</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Moving Average add">
+      <option name="closed" value="true" />
+      <created>1765053697317</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765053697317</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project file add" />
-    <option name="LAST_COMMIT_MESSAGE" value="project file add" />
+    <MESSAGE value="Moving Average add" />
+    <option name="LAST_COMMIT_MESSAGE" value="Moving Average add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>
-          <line>3</line>
+          <line>4</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

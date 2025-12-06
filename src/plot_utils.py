@@ -1,23 +1,22 @@
 import matplotlib.pyplot as plt
 
 
-def academic_plot(ts, smooth, forecast, player_name, method="MA"):
-    plt.figure(figsize=(10,5))
+def academic_plot(ts, smooth, forecast, player_name, method="Model"):
+    """
+    Draws a clean academic-style forecast plot.
+    """
 
-    plt.plot(ts.index, ts, color="gray", alpha=0.4, linewidth=0.8,
-             label="Gerçek İsabetler")
+    plt.figure(figsize=(10, 5))
 
-    plt.plot(smooth.index, smooth, linewidth=2,
-             label="Hareketli Ortalama")
-
-    plt.plot(forecast.index, forecast, "--", color="red", linewidth=2,
-             label="Forecast")
+    plt.plot(ts.index, ts, color="gray", alpha=0.4, linewidth=0.8, label="Raw Data")
+    plt.plot(smooth.index, smooth, linewidth=2, label="Smoothed")
+    plt.plot(forecast.index, forecast, "--", linewidth=2, color="red", label="Forecast")
 
     plt.axvline(ts.index[-1], linestyle=":", color="black", alpha=0.7)
 
-    plt.title(f"{player_name} – {method} Tahmini")
-    plt.xlabel("Tarih")
-    plt.ylabel("İsabet Sayısı")
+    plt.title(f"{player_name} – {method} Forecast")
+    plt.xlabel("Date")
+    plt.ylabel("Shots Made")
 
     plt.grid(True, linewidth=0.5, alpha=0.3)
     plt.legend(frameon=False)
