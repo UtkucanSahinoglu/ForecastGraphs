@@ -1,13 +1,16 @@
-import pandas as pd
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
-from src.plot_utils import academic_plot
+from src.plot_utils import academic_forecast_plot
 
 
 def holt_winters_forecast(ts, steps=20, player_name="Player"):
-    ts = ts.asfreq('D').fillna(0)
+    """
+    Holt-Winters Exponential Smoothing (trend only; no seasonality).
+    """
+
+    ts_daily = ts.asfreq("D").fillna(0)
 
     model = ExponentialSmoothing(
-        ts,
+        ts_daily,
         trend="add",
         seasonal=None,
         initialization_method="estimated"
@@ -17,4 +20,10 @@ def holt_winters_forecast(ts, steps=20, player_name="Player"):
     smoothed = fit.fittedvalues
     forecast = fit.forecast(steps)
 
-    academic_plot(ts, smoothed, forecast, player_name, method="Holt-Winters")
+    explanation = (
+        "Holt-Winters (trend version) extends SES by modeling the\n"
+        "underlying trend explicitly in addition to the level."
+    )
+
+    academic_forecast_plot(ts_daily, smoothed, forecast, player_name, "Holt-Winters (Trend Only)", explanation)
+    return forecast

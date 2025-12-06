@@ -1,30 +1,19 @@
-import matplotlib.pyplot as plt
+from src.plot_utils import academic_multi_ma_plot
 
 
 def impact_of_different_q(ts, q_values, player_name="Player"):
     """
-    Shows the impact of different q (window size) on moving average smoothing.
-    q_values = [7, 14, 30] for example
+    Shows the impact of different MA window sizes (q values) on smoothing.
     """
 
-    plt.figure(figsize=(12, 6))
-
-    # Raw data
-    plt.plot(ts.index, ts, linewidth=0.8, color="gray", alpha=0.4, label="Raw Data")
-
-    # Different q values
+    ma_dict = {}
     for q in q_values:
-        ma = ts.rolling(q).mean()
-        plt.plot(ma.index, ma, linewidth=2, label=f"MA-{q}")
+        ma_series = ts.rolling(q).mean().dropna()
+        ma_dict[f"MA-{q}"] = ma_series
 
-    plt.title(f"Impact of Different q on Moving Averages – {player_name}")
-    plt.xlabel("Date")
-    plt.ylabel("Shots Made")
-    plt.grid(True, alpha=0.3)
-    plt.legend(frameon=False)
-    plt.tight_layout()
+    explanation = (
+        "Smaller q reacts quickly but keeps more noise.\n"
+        "Larger q produces smoother trends but responds more slowly."
+    )
 
-    plt.savefig(f"figures/{player_name}_Impact_of_q.png", dpi=300)
-    plt.show()
-
-    print("Impact of q plot saved.")
+    academic_multi_ma_plot(ts, ma_dict, player_name, "Impact of Different q (Window Sizes)", explanation)

@@ -1,93 +1,101 @@
 import pandas as pd
+import numpy as np
+from statsmodels.tsa.holtwinters import SimpleExpSmoothing, ExponentialSmoothing
+
 from src.metrics import mad, mse, rmse, mape
-from src.forecast_ma import moving_average_forecast
-from src.forecast_wma import wma_forecast
-from src.forecast_ses import exponential_smoothing_forecast
-from src.forecast_holt import holt_winters_forecast
+from src.plot_utils import error_bar_plot
 
 
-def compute_smoothed_ma(ts, window):
-    return ts.rolling(window).mean().dropna()
+def _compute_ma(ts, window):
+    ma = ts.rolling(window).mean().dropna()
+    aligned = ts[-len(ma):]
+    return aligned, ma
 
 
-def compute_smoothed_wma(ts, window):
-    import numpy as np
+def _compute_wma(ts, window):
     weights = np.arange(1, window + 1)
-    wma = ts.rolling(window).apply(lambda x: np.dot(x, weights) / weights.sum(), raw=True)
-    return wma.dropna()
+    wma = ts.rolling(window).apply(lambda x: np.dot(x, weights) / weights.sum(), raw=True).dropna()
+    aligned = ts[-len(wma):]
+    return aligned, wma
 
 
-def compute_smoothed_ses(ts, alpha):
-    from statsmodels.tsa.holtwinters import SimpleExpSmoothing
-    ts2 = ts.asfreq('D').fillna(0)
+def _compute_ses(ts, alpha):
+    ts2 = ts.asfreq("D").fillna(0)
     model = SimpleExpSmoothing(ts2, initialization_method="estimated")
     fit = model.fit(smoothing_level=alpha, optimized=False)
-    return fit.fittedvalues
+    fitted = fit.fittedvalues
+    aligned = ts2[-len(fitted):]
+    return aligned, fitted
 
 
-def compute_smoothed_holt(ts):
-    from statsmodels.tsa.holtwinters import ExponentialSmoothing
-    ts2 = ts.asfreq('D').fillna(0)
-    model = ExponentialSmoothing(
-        ts2, trend="add", seasonal=None, initialization_method="estimated"
-    )
+def _compute_holt(ts):
+    ts2 = ts.asfreq("D").fillna(0)
+    model = ExponentialSmoothing(ts2, trend="add", seasonal=None, initialization_method="estimated")
     fit = model.fit()
-    return fit.fittedvalues
+    fitted = fit.fittedvalues
+    aligned = ts2[-len(fitted):]
+    return aligned, fitted
 
 
 def compare_forecast_errors(ts, player_name="Player"):
+    """
+    Compares MA, WMA, SES, Holt-Winters in terms of MAD, MSE, RMSE, MAPE.
+    Returns a DataFrame and saves CSV + shows MAD bar chart.
+    """
+
     results = []
 
-    # ---- MA ----
-    ma = compute_smoothed_ma(ts, 14)
-    common = ts[-len(ma):]
+    # MA-14
+    aligned, ma = _compute_ma(ts, 14)
     results.append({
         "Model": "MA-14",
-        "MAD": mad(common, ma),
-        "MSE": mse(common, ma),
-        "RMSE": rmse(common, ma),
-        "MAPE": mape(common, ma)
+        "MAD": mad(aligned, ma),
+        "MSE": mse(aligned, ma),
+        "RMSE": rmse(aligned, ma),
+        "MAPE": mape(aligned, ma)
     })
 
-    # ---- WMA ----
-    wma = compute_smoothed_wma(ts, 5)
-    common = ts[-len(wma):]
+    # WMA-5
+    aligned, wma = _compute_wma(ts, 5)
     results.append({
         "Model": "WMA-5",
-        "MAD": mad(common, wma),
-        "MSE": mse(common, wma),
-        "RMSE": rmse(common, wma),
-        "MAPE": mape(common, wma)
+        "MAD": mad(aligned, wma),
+        "MSE": mse(aligned, wma),
+        "RMSE": rmse(aligned, wma),
+        "MAPE": mape(aligned, wma)
     })
 
-    # ---- SES ----
-    ses = compute_smoothed_ses(ts, alpha=0.3)
-    common = ts.asfreq('D').fillna(0)
+    # SES-0.3
+    aligned, ses = _compute_ses(ts, alpha=0.3)
     results.append({
         "Model": "SES-0.3",
-        "MAD": mad(common, ses),
-        "MSE": mse(common, ses),
-        "RMSE": rmse(common, ses),
-        "MAPE": mape(common, ses)
+        "MAD": mad(aligned, ses),
+        "MSE": mse(aligned, ses),
+        "RMSE": rmse(aligned, ses),
+        "MAPE": mape(aligned, ses)
     })
 
-    # ---- Holt-Winters ----
-    holt = compute_smoothed_holt(ts)
-    common = ts.asfreq('D').fillna(0)
+    # Holt-Winters
+    aligned, holt = _compute_holt(ts)
     results.append({
         "Model": "Holt-Winters",
-        "MAD": mad(common, holt),
-        "MSE": mse(common, holt),
-        "RMSE": rmse(common, holt),
-        "MAPE": mape(common, holt)
+        "MAD": mad(aligned, holt),
+        "MSE": mse(aligned, holt),
+        "RMSE": rmse(aligned, holt),
+        "MAPE": mape(aligned, holt)
     })
 
-    # Convert to DataFrame for readability
     df = pd.DataFrame(results)
-    print("\nForecast Error Comparison")
-    print(df.to_string(index=False), "\n")
+    df = df.sort_values("MAD").reset_index(drop=True)
 
-    # Save result as CSV (optional)
-    df.to_csv(f"figures/{player_name}_forecast_error_comparison.csv", index=False)
+    print("\n============ Forecast Error Comparison ============\n")
+    print(df.to_string(index=False))
+    print("\n===================================================\n")
+
+    # Save CSV
+    df.to_csv(f"figures/{player_name}_error_comparison.csv", index=False)
+
+    # Plot MAD comparison
+    error_bar_plot(df, player_name=player_name)
 
     return df

@@ -1,52 +1,35 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+from src.plot_utils import academic_forecast_plot
+
 
 def trend_projection_forecast(ts, steps=20, player_name="Player"):
     """
-    Trend Projection Method (Linear Trend Forecasting).
-    Fits Y = a + b*t and forecasts future values.
+    Trend Projection Method using simple linear regression:
+    Ŷ = a + b * t
     """
 
-    print(f"Trend Projection Forecast for: {player_name}")
+    ts_daily = ts.asfreq("D").fillna(0)
+    n = len(ts_daily)
+    t = np.arange(1, n + 1)
 
-    # Ensure regular frequency
-    ts = ts.asfreq('D').fillna(0)
+    # polyfit: slope b, intercept a
+    b, a = np.polyfit(t, ts_daily.values, deg=1)
 
-    # Create t index: 1, 2, 3, ...
-    t = np.arange(1, len(ts) + 1)
-
-    # Fit Linear Regression
-    coeffs = np.polyfit(t, ts.values, deg=1)
-    a, b = coeffs[1], coeffs[0]  # a = intercept, b = slope
-
-    print(f"Trend equation: Y = {a:.4f} + {b:.4f} * t")
-
-    # Fitted values
     fitted = a + b * t
 
-    # Future forecast
-    t_future = np.arange(len(ts) + 1, len(ts) + steps + 1)
-    forecast = a + b * t_future
+    t_future = np.arange(n + 1, n + steps + 1)
+    forecast_values = a + b * t_future
 
-    future_dates = pd.date_range(ts.index[-1] + pd.Timedelta(days=1), periods=steps)
-    forecast_series = pd.Series(forecast, index=future_dates)
+    future_dates = pd.date_range(ts_daily.index[-1] + pd.Timedelta(days=1), periods=steps)
+    forecast = pd.Series(forecast_values, index=future_dates)
 
-    # Plot
-    plt.figure(figsize=(10, 5))
-    plt.plot(ts.index, ts.values, color="gray", alpha=0.4, label="Raw Data")
-    plt.plot(ts.index, fitted, color="blue", linewidth=2, label="Trend Line")
-    plt.plot(forecast_series.index, forecast_series.values,
-             "--", color="red", linewidth=2, label="Forecast")
+    fitted_series = pd.Series(fitted, index=ts_daily.index)
 
-    plt.title(f"Trend Projection Method – {player_name}")
-    plt.xlabel("Date")
-    plt.ylabel("Shots Made")
-    plt.grid(True, alpha=0.3)
-    plt.legend(frameon=False)
-    plt.tight_layout()
-    plt.savefig(f"figures/{player_name}_Trend_Projection.png", dpi=300)
-    plt.show()
+    explanation = (
+        "Trend Projection fits a straight line Ŷ = a + bt\n"
+        "and extrapolates it into future periods."
+    )
 
-    print("Trend Projection forecast completed.\n")
-    return forecast_series
+    academic_forecast_plot(ts_daily, fitted_series, forecast, player_name, "Trend Projection (Linear)", explanation)
+    return forecast

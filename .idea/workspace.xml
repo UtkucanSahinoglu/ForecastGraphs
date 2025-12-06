@@ -4,9 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="044e8f0c-7038-465c-8306-de87f5591fc4" name="Changes" comment="method add">
+    <list default="true" id="044e8f0c-7038-465c-8306-de87f5591fc4" name="Changes" comment="readme file add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_Associative_Method.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_Graph_of_MA.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_Holt-Winters.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_Impact_of_q.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_Least_Squares.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_MA-14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_SES-alpha0.3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_Seasonal_Index.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_Trend_Projection.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_WMA-5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/figures/LeBron James_forecast_error_comparison.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/associative_method.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/associative_method.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/compare_errors.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/compare_errors.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forecast_holt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/forecast_holt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forecast_ma.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/forecast_ma.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forecast_ses.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/forecast_ses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/forecast_wma.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/forecast_wma.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/impact_of_q.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/impact_of_q.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/least_squares.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/least_squares.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loader.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/plot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plot_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/seasonal_index.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/seasonal_index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/trend_projection.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/trend_projection.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,14 +159,23 @@
       <option name="project" value="LOCAL" />
       <updated>1765056947791</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="readme file add">
+      <option name="closed" value="true" />
+      <created>1765057195936</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765057195936</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project file add" />
     <MESSAGE value="Moving Average add" />
     <MESSAGE value="method add" />
-    <option name="LAST_COMMIT_MESSAGE" value="method add" />
+    <MESSAGE value="readme file add" />
+    <option name="LAST_COMMIT_MESSAGE" value="readme file add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
