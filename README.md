@@ -1,98 +1,86 @@
-🎯 FORECASTGRAPHS PROJECT
-Time Series & Forecasting Methods Applied to NBA Data (2004–2025)
+# 🎯 FORECASTGRAPHS PROJECT  
+### Time Series & Forecasting Methods Applied to NBA Data (2004–2025)
 
-ForecastGraphs is a complete Python forecasting project that applies multiple time series and causal forecasting methods to NBA shot data.
+ForecastGraphs is a complete Python forecasting project that applies multiple time series and causal forecasting methods to NBA shot data.  
 It produces clean, academic-quality plots and model evaluation tables for research and coursework.
 
-📁 Project Structure
+---
+
+## 📁 Project Structure
+
 ForecastGraphs/
 │
-├── data/                      # NBA shot ZIP files
-├── figures/                   # Exported plots
+├── data/ # NBA shot ZIP files
+├── figures/ # Exported plots
 │
 ├── src/
-│   ├── loader.py              # Dataset loader
-│   ├── preprocess.py          # Build player time series
-│   ├── plot_utils.py          # Academic plotting
-│   ├── metrics.py             # MAD, MSE, RMSE, MAPE
-│   ├── forecast_ma.py         # Moving Average
-│   ├── forecast_wma.py        # Weighted MA
-│   ├── forecast_ses.py        # Simple Exp. Smoothing
-│   ├── forecast_holt.py       # Holt–Winters
-│   ├── trend_projection.py    # Trend Projection
-│   ├── least_squares.py       # Least Squares Regression
-│   ├── seasonal_index.py      # Seasonal Index Method
-│   ├── associative_method.py  # Regression (Causal) Forecasting
-│   ├── impact_of_q.py         # Effect of different MA-q values
-│   └── compare_errors.py      # Error comparison table
+│ ├── loader.py # Dataset loader
+│ ├── preprocess.py # Build player time series
+│ ├── plot_utils.py # Academic plotting
+│ ├── metrics.py # MAD, MSE, RMSE, MAPE
+│ ├── forecast_ma.py # Moving Average
+│ ├── forecast_wma.py # Weighted MA
+│ ├── forecast_ses.py # Simple Exp. Smoothing
+│ ├── forecast_holt.py # Holt–Winters
+│ ├── trend_projection.py # Trend Projection
+│ ├── least_squares.py # Least Squares Regression
+│ ├── seasonal_index.py # Seasonal Index Method
+│ ├── associative_method.py # Regression (Causal) Forecasting
+│ ├── impact_of_q.py # Effect of different MA-q values
+│ └── compare_errors.py # Error comparison table
 │
-└── main.py                    # Runs all forecast models
+└── main.py # Runs all forecast models
 
-📈 Forecasting Methods Implemented
-1. Moving Average Methods
 
-Simple Moving Average (MA-q)
+---
 
-Weighted Moving Average (WMA)
+## 📈 Forecasting Methods Implemented
 
-Multiple MA comparison
+### **Moving Average Methods**
+- Simple Moving Average (MA-q)  
+- Weighted Moving Average (WMA)  
+- Multiple MA comparison  
+- Impact of different window lengths (q)
 
-Impact of different window lengths (q)
+### **Exponential Smoothing**
+- Simple Exponential Smoothing (SES)  
+- Holt Trend Method  
+- Holt–Winters Method (trend + seasonality)
 
-2. Exponential Smoothing
+### **Trend-Based Models**
+- Trend Projection Method  
+- Least Squares Trend (Linear Regression)
 
-Simple Exponential Smoothing (SES)
+### **Seasonal Methods**
+- Seasonal Index Method (Weekly Seasonality)
 
-Holt Trend Method
+### **Associative (Causal) Forecasting**
+- Linear Regression Model  
+- Uses explanatory variables:
+  - Shot Distance  
+  - Quarter  
+  - Time Left  
 
-Holt–Winters Method (trend + seasonality)
+### **Error Metrics & Model Evaluation**
+- MAD – Mean Absolute Deviation  
+- MSE – Mean Squared Error  
+- RMSE – Root Mean Squared Error  
+- MAPE – Mean Absolute Percentage Error  
+- Comparison table generated automatically  
 
-3. Trend-Based Models
+---
 
-Trend Projection Method
+## 🚀 How to Run the Project
 
-Least Squares Trend (Linear Regression)
-
-4. Seasonal Methods
-
-Seasonal Index Method (Weekly Seasonality)
-
-5. Associative (Causal) Forecasting
-
-Linear Regression Model
-
-Uses explanatory variables:
-
-Shot Distance
-
-Quarter
-
-Time Left
-
-6. Error Metrics & Model Evaluation
-
-MAD – Mean Absolute Deviation
-
-MSE – Mean Squared Error
-
-RMSE – Root Mean Squared Error
-
-MAPE – Mean Absolute Percentage Error
-
-Comparison table generated automatically
-
-🚀 How to Run the Project
-1️⃣ Install required Python packages:
+### 1️⃣ Install required Python packages:
+```bash
 pip install -r requirements.txt
 
-2️⃣ Execute main forecast script:
+Execute main forecast script:
 python main.py
 
-3️⃣ View results in:
+All outputs are saved in:
 figures/
-
-
-All plots and comparison tables are automatically saved here.
 
 🧠 What This Project Produces
 
@@ -121,15 +109,3 @@ Regression and decomposition research
 End-of-term forecasting projects
 
 All methods follow academically accepted formulas and produce publication-level charts.
-
-🔧 Future Improvements (Optional)
-
-ARIMA / SARIMA models
-
-Prophet forecasting
-
-Neural network forecasting (LSTM, RNN)
-
-Full automatic PDF report generation
-
-Hyperparameter optimization
