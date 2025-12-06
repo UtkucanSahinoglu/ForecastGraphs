@@ -4,25 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="044e8f0c-7038-465c-8306-de87f5591fc4" name="Changes" comment="Moving Average add">
-      <change afterPath="$PROJECT_DIR$/src/associative_method.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/compare_errors.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forecast_holt.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forecast_ses.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/forecast_wma.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/graph_ma.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/impact_of_q.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/init.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/least_squares.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/metrics.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/seasonal_index.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/trend_projection.py" afterDir="false" />
+    <list default="true" id="044e8f0c-7038-465c-8306-de87f5591fc4" name="Changes" comment="method add">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/forecast_ma.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/forecast_ma.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loader.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/plot_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/plot_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/preprocess.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/preprocess.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,13 +118,30 @@
       <option name="project" value="LOCAL" />
       <updated>1765053697317</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="method add">
+      <option name="closed" value="true" />
+      <created>1765056465241</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765056465241</updated>
+    </task>
+    <task id="LOCAL-00004" summary="method add">
+      <option name="closed" value="true" />
+      <created>1765056947791</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765056947791</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project file add" />
     <MESSAGE value="Moving Average add" />
-    <option name="LAST_COMMIT_MESSAGE" value="Moving Average add" />
+    <MESSAGE value="method add" />
+    <option name="LAST_COMMIT_MESSAGE" value="method add" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
