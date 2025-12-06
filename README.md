@@ -1,79 +1,135 @@
-ForecastGraphs Project – Time Series & Forecasting Methods Applied to NBA Data
+🎯 FORECASTGRAPHS PROJECT
+Time Series & Forecasting Methods Applied to NBA Data (2004–2025)
 
-ForecastGraphs is a full forecasting analysis project developed in Python. It applies multiple time series and causal forecasting techniques to NBA shot data (2004–2025) and generates academic-quality plots and tables for research, coursework, and professional reporting.
+ForecastGraphs is a complete Python forecasting project that applies multiple time series and causal forecasting methods to NBA shot data.
+It produces clean, academic-quality plots and model evaluation tables for research and coursework.
 
-The project includes moving averages, exponential smoothing, trend models, seasonal methods, regression forecasting, and full error comparison modules. All outputs are saved as high-quality figures inside the figures/ directory.
+📁 Project Structure
+ForecastGraphs/
+│
+├── data/                      # NBA shot ZIP files
+├── figures/                   # Exported plots
+│
+├── src/
+│   ├── loader.py              # Dataset loader
+│   ├── preprocess.py          # Build player time series
+│   ├── plot_utils.py          # Academic plotting
+│   ├── metrics.py             # MAD, MSE, RMSE, MAPE
+│   ├── forecast_ma.py         # Moving Average
+│   ├── forecast_wma.py        # Weighted MA
+│   ├── forecast_ses.py        # Simple Exp. Smoothing
+│   ├── forecast_holt.py       # Holt–Winters
+│   ├── trend_projection.py    # Trend Projection
+│   ├── least_squares.py       # Least Squares Regression
+│   ├── seasonal_index.py      # Seasonal Index Method
+│   ├── associative_method.py  # Regression (Causal) Forecasting
+│   ├── impact_of_q.py         # Effect of different MA-q values
+│   └── compare_errors.py      # Error comparison table
+│
+└── main.py                    # Runs all forecast models
 
-Project Structure
+📈 Forecasting Methods Implemented
+1. Moving Average Methods
 
-data/ → ZIP files containing NBA shot data
-figures/ → All generated graphs
-src/ → Forecasting modules
-loader.py → Loads NBA datasets
-preprocess.py → Converts player data into daily time series
-plot_utils.py → Academic-style plotting
-metrics.py → MAD, MSE, RMSE, MAPE
-forecast_ma.py → Moving Average
-forecast_wma.py → Weighted Moving Average
-forecast_ses.py → Simple Exponential Smoothing
-forecast_holt.py → Holt–Winters Method
-least_squares.py → Least Squares Trend Method
-trend_projection.py → Trend Projection Method
-seasonal_index.py → Seasonal Index Method
-associative_method.py → Regression-based forecasting
-impact_of_q.py → Effect of different q values
-compare_errors.py → Forecast error comparison table
-main.py → Runs all selected forecasting models
+Simple Moving Average (MA-q)
 
-Forecasting Methods Implemented
+Weighted Moving Average (WMA)
 
-Moving Average Methods
-– Simple Moving Average (MA-q)
-– Weighted Moving Average (WMA)
-– Graph of multiple moving averages
-– Impact of different q values
+Multiple MA comparison
 
-Exponential Smoothing
-– Simple Exponential Smoothing (SES)
-– Holt Method (trend)
-– Holt–Winters Method (trend + seasonality)
+Impact of different window lengths (q)
 
-Trend-Based Forecasting
-– Trend Projection Method
-– Least Squares Method
-– Linear trend forecasting using regression
+2. Exponential Smoothing
 
-Seasonal Methods
-– Seasonal Index Method (weekly seasonality)
+Simple Exponential Smoothing (SES)
 
-Associative (Causal) Forecasting
-– Linear regression-based forecasting
-– Uses independent variables such as shot distance, quarter, and remaining time
+Holt Trend Method
 
-Error Metrics & Model Evaluation
-– MAD (Mean Absolute Deviation)
-– MSE (Mean Squared Error)
-– RMSE (Root Mean Squared Error)
-– MAPE (Percentage Error)
-– Full comparison table automatically generated
+Holt–Winters Method (trend + seasonality)
 
-How to Run
+3. Trend-Based Models
 
-Install required packages using pip and run:
+Trend Projection Method
 
+Least Squares Trend (Linear Regression)
+
+4. Seasonal Methods
+
+Seasonal Index Method (Weekly Seasonality)
+
+5. Associative (Causal) Forecasting
+
+Linear Regression Model
+
+Uses explanatory variables:
+
+Shot Distance
+
+Quarter
+
+Time Left
+
+6. Error Metrics & Model Evaluation
+
+MAD – Mean Absolute Deviation
+
+MSE – Mean Squared Error
+
+RMSE – Root Mean Squared Error
+
+MAPE – Mean Absolute Percentage Error
+
+Comparison table generated automatically
+
+🚀 How to Run the Project
+1️⃣ Install required Python packages:
+pip install -r requirements.txt
+
+2️⃣ Execute main forecast script:
 python main.py
 
-All plots will be saved into the figures/ folder.
-All forecasting modules can be turned on or off inside main.py.
+3️⃣ View results in:
+figures/
 
-Notes for Academic Use
 
-This project is suitable for forecasting courses, time series assignments, machine learning exploration, and statistical modeling. All methods follow academic definitions and produce clean, publication-level plots.
+All plots and comparison tables are automatically saved here.
 
-Future Enhancements (Optional)
+🧠 What This Project Produces
 
-– ARIMA / SARIMA models
-– Prophet model
-– Neural network forecasting
-– Automated hyperparameter selection
-– PDF forecasting report generation
+Clean academic-style forecast graphs
+
+Trend and seasonality visualizations
+
+Regression-based explanatory forecasting
+
+Performance comparison of all models
+
+Forecast tables & prediction series
+
+📚 Academic Purpose
+
+This project is ideal for:
+
+MBA forecasting assignments
+
+Time series analysis coursework
+
+Statistical modeling studies
+
+Regression and decomposition research
+
+End-of-term forecasting projects
+
+All methods follow academically accepted formulas and produce publication-level charts.
+
+🔧 Future Improvements (Optional)
+
+ARIMA / SARIMA models
+
+Prophet forecasting
+
+Neural network forecasting (LSTM, RNN)
+
+Full automatic PDF report generation
+
+Hyperparameter optimization
