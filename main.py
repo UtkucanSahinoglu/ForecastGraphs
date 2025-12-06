@@ -1,16 +1,12 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from src.loader import load_shot_data
+from src.preprocess import prepare_player_timeseries
+from src.forecast_ma import moving_average_forecast
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+if __name__ == "__main__":
+    df = load_shot_data()
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    player = "LeBron James"
+    ts = prepare_player_timeseries(df, player)
+
+    moving_average_forecast(ts, window=14, steps=20, player_name=player)
